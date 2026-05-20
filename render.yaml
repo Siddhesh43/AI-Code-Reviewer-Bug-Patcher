@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ai-code-reviewer-backend
+    runtime: node
+    plan: free
+    buildCommand: cd "Backend App" && npm install
+    startCommand: cd "Backend App" && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MOCK_API_MODE
+        value: "true"
+      - key: PORT
+        scope: runtime
